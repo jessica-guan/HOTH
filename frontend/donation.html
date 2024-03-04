@@ -12,44 +12,47 @@
         <a href="catalog.html">Shop</a>
         <a href="donation.html">Donate</a>
     </div>
-    
+        
     <body>
         <h1>Donate your clothes!</h1>
         <img src="https://media.istockphoto.com/id/1283154274/photo/woman-holding-cardboard-donation-box-full-with-folded-clothes.jpg?s=612x612&w=0&k=20&c=bqJFhv_hRXV3Milqrmuh54eyIiScjgqP6z0iwnnT84I=" alt="rick roll image"/><br><br>
 
-        <label for="Item Name">Item Name:</label>
-        <input type="text" id="Name" name="Name"><br><br>
+        <form id="clothesForm">
+            <label for="name">Item Name:</label>
+            <input type="text" id="name" name="name"><br><br>
 
-        <label for="Item Name">Brand:</label>
-        <input type="text" id="Name" name="Name"><br><br>
+            <label for="type">Brand:</label>
+            <input type="text" id="type" name="type"><br><br>
 
-        <label for="color">Color:</label>
-    <select name="color" id="color"> 
-        <option value="red">Red</option> 
-        <option value="orange">Orange</option> 
-        <option value="blue">Blue</option> 
-        <option value="green">Green</option> 
-    </select><br><br>
+            <label for="size">Size:</label>
+            <select name="size" id="size"> 
+            <option value="s">S</option> 
+            <option value="m">M</option> 
+            <option value="l">L</option> 
+            <option value="XL">XL</option> 
+            </select><br><br>
 
-        <label for="size">Size:</label>
-    <select name="size" id="size"> 
-        <option value="s">S</option> 
-        <option value="m">M</option> 
-        <option value="l">L</option> 
-        <option value="XL">L</option> 
-    </select><br><br>
+            <label for="color">Color:</label>
+            <select name="color" id="color"> 
+            <option value="red">Red</option> 
+            <option value="orange">Orange</option> 
+            <option value="blue">Blue</option> 
+            <option value="green">Green</option> 
+            </select><br><br>
+            
+            <label for="thrifted">Is your item thrifted?</label>
+            <select name="thrifted" id="thrifted"> 
+            <option value="thrifted">Thrifted</option> 
+            <option value="not thrifted">Not Thrifted</option> 
+            </select><br><br>
 
-        <label for="thrifted">Is your item thrifted?</label>
-    <select name="thrifted" id="thrifted"> 
-        <option value="thrifted">Thrifted</option> 
-        <option value="not thrifted">Not Thrifted</option> 
-    </select><br><br>
+            <label for="file-input">Upload an image of your item:</label>
+            <input type="text" id="image_url" name="image_url"><br><br>
+            <!-- <input type="file" id ="file-input" accept="image/*"><br><br> -->
+            
+            <input type="submit" value="Submit">
+        </form>
 
-        <label for="file-input">Upload an image of your item:</label>
-        <input type="file" id ="file-input" accept="image/*"><br><br>
-    
-    <input type="submit" value="Submit">
-        
+        <script src="clothesForm.js" defer></script>
     </body>
-
-    </html>
+</html>
