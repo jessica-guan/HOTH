@@ -104,10 +104,8 @@ class ClothesList(Resource): # return information about list of clothes
         cursor.execute(f"SELECT * FROM {table_name}")
         result = cursor.fetchall()
 
-        clothes_list = {}
+        clothes_list = []
         for row in result:
-            key = row[0]
-
             value_dict = {
                 'name': row[1],
                 'type': row[2],
@@ -117,9 +115,9 @@ class ClothesList(Resource): # return information about list of clothes
                 'image_url': row[6]
             }
 
-            clothes_list[key] = value_dict
+            clothes_list.append(value_dict)
 
-        return list(clothes_list.values())
+        return clothes_list
     
     def post(self):
         args = parser.parse_args()
