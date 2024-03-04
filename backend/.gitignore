@@ -1,1 +1,4 @@
 flask-demo/
+config.py
+/.vscode
+__pycache__
