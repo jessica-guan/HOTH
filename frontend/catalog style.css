@@ -1,0 +1,137 @@
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.buttoncontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 80px;
+  font-weight: 600;
+  font-family: 'Courier New', Courier, monospace;
+  background-image: linear-gradient(45deg, #553c9a, #dd1070);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: 600;
+  font-family: 'Brush Script MT', cursive;
+  background-image: linear-gradient(45deg, #03000c, #f3f0f1);
+  color: transparent;
+  -webkit-background-clip: text;
+  margin-bottom: 0%;
+}
+
+body {
+  background-color: #D6D6E7
+}
+
+p {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #f10dc0;
+  padding-bottom: 16px;
+}
+
+button {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: flex;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 18px;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  margin-bottom: 80px;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .15s, transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  width: 150px;
+  will-change: box-shadow, transform;
+}
+
+button:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  /* Gap between image containers */
+  max-height: calc(5 * (calc(20% - 10px)));
+  /* Limit gallery to 5 rows */
+  overflow: auto;
+  /* Add scrollbar if needed */
+}
+
+.imagecontainer {
+  flex: 0 0 calc(20% - 10px);
+  /* Adjust width of image container */
+  display: block;
+  justify-content: center;
+  /* Center image horizontally */
+  align-items: center;
+  /* Center image vertically */
+  border: 1px solid #ccc;
+  /* Optional: Add border around image container */
+  overflow: hidden;
+  /* Ensure images don't overflow container */
+}
+
+.imagecontainer img {
+  width: 100%;
+  /* Ensure each image fills its container */
+  height: 80%;
+  /* Ensure each image fills its container */
+  object-fit: cover;
+  /* Maintain aspect ratio and cover entire container */
+}
+
+.caption {
+  text-align: center;
+  /* Center the caption text */
+  margin-top: 5px;
+  /* Add space between image and caption */
+  color: #131212;
+  /* Caption text color */
+  font-size: 14px;
+  /* Caption font size */
+}
