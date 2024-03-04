@@ -60,7 +60,7 @@ parser.add_argument('name')
 parser.add_argument('type')
 parser.add_argument('size')
 parser.add_argument('color')
-parser.add_argument('thrifted', type = bool)
+parser.add_argument('thrifted')
 parser.add_argument('image_url')
 
 def abort_if_dne(clothes_id):
@@ -87,6 +87,10 @@ class Clothes(Resource): # information about one article of clothing
         args = parser.parse_args()
         abort_if_dne(clothes_id)
         
+        # Logging the PUT request data
+        print("Received PUT request data for clothes_id:", clothes_id)
+        print("Updated data:", args)
+
         query = """
         UPDATE Clothes
         SET name = %s, type = %s, size = %s, color = %s, thrifted = %s, image_url = %s
@@ -104,10 +108,8 @@ class ClothesList(Resource): # return information about list of clothes
         cursor.execute(f"SELECT * FROM {table_name}")
         result = cursor.fetchall()
 
-        clothes_list = {}
+        clothes_list = []
         for row in result:
-            key = row[0]
-
             value_dict = {
                 'name': row[1],
                 'type': row[2],
@@ -117,12 +119,15 @@ class ClothesList(Resource): # return information about list of clothes
                 'image_url': row[6]
             }
 
-            clothes_list[key] = value_dict
+            clothes_list.append(value_dict)
 
-        return list(clothes_list.values())
+        return clothes_list
     
     def post(self):
         args = parser.parse_args()
+        print("Received POST REQUEST")
+
+        print(args)
         query = """
         INSERT INTO Clothes (name, type, size, color, thrifted, image_url)
         VALUES (%s, %s, %s, %s, %s, %s)
